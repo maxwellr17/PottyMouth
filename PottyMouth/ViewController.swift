@@ -11,7 +11,7 @@ import Speech
 import AVFoundation
 import AudioToolbox
 
-class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlayerDelegate {
+class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     //UI elements
     @IBOutlet weak var textLabel: UILabel!
@@ -230,7 +230,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlaye
 
         do {
             player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            player.delegate = self
             print(path)
             print((player!.play()))
         }
